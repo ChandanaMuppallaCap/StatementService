@@ -1,0 +1,12 @@
+package com.tmobile.newservice.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.tmobile.newservice.Repository.DAORepository;
+
+public class StatmentService {
+	@Autowired
+	private DAORepository repository;
+	
+
+}

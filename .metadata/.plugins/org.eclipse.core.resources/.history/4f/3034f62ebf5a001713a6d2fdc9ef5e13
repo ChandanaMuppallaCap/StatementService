@@ -1,0 +1,68 @@
+package com.tmobile.newservice;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class StatementVO {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private String	StatementId ;
+	private String	AccountId;
+	private double BalanceFwd;
+	private double TotalStatementDue;
+
+	
+	public String getStatementId() {
+		return StatementId;
+	}
+
+
+	public void setStatementId(String statementId) {
+		StatementId = statementId;
+	}
+
+
+	public String getAccountId() {
+		return AccountId;
+	}
+
+
+	public void setAccountId(String accountId) {
+		AccountId = accountId;
+	}
+
+
+	public double getBalanceFwd() {
+		return BalanceFwd;
+	}
+
+
+	public void setBalanceFwd(double balanceFwd) {
+		BalanceFwd = balanceFwd;
+	}
+
+
+	public double getTotalStatementDue() {
+		return TotalStatementDue;
+	}
+
+
+	public void setTotalStatementDue(double totalStatementDue) {
+		TotalStatementDue = totalStatementDue;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+	@Override
+	public String toString() {
+		return String.format("Statement[StatementId=%d, AccountId=%s, BalanceFwd='%d', TotalStatementDue='%d'")
+				StatementId, , AccountId, BalanceFwd, TotalStatementDue);
+
+	}
+}

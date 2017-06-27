@@ -1,0 +1,64 @@
+package com.tmobile.newservice.Controller;
+import java.net.HttpURLConnection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tmobile.newservice.Service.StatmentService;
+import com.tmobile.newservice.VO.StatementVO;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
+public class NewServiceController {
+	@RestController
+	public class CustomerController {
+
+		@Autowired
+		private StatmentService service;
+		@Autowired
+		private StatementVO statement;
+
+		@ApiOperation(value = "This method is used for getting the Statement Information by StatementId!.")
+		@ApiResponses(value = {
+				@ApiResponse(code = HttpURLConnection.HTTP_OK, message = "Statement Information is fetched as Sucess!"),
+				@ApiResponse(code = HttpURLConnection.HTTP_BAD_REQUEST, message = "Statement Information ") })
+		@GetMapping(value = "/api-service/v1/Statement/{StatementId}", produces = "application/json")
+		public ResponseEntity<?> getStatementById(@PathVariable(required=true,value="StatementId")String StatementId) {
+			
+			 statement=service.getStatementsById(StatementId);
+				return new ResponseEntity(statement, HttpStatus.OK);
+			
+			
+
+		}
+
+		@ApiOperation(value = "This method is used for getting the Statement Information by AccountId!.")
+		@ApiResponses(value = {
+				@ApiResponse(code = HttpURLConnection.HTTP_OK, message = "Statement Information is fetched as Sucess!"),
+				@ApiResponse(code = HttpURLConnection.HTTP_BAD_REQUEST, message = "Statement Information ") })
+		@GetMapping(value = "/api-service/v1/Statement/{AccountId}", produces = "application/json")
+		public ResponseEntity<?> getStatementByaccountId(@PathVariable(required=true,value="AccountId")String AccountId) {
+			
+			 statement=service.getStatementsByaccountId(AccountId);
+				return new ResponseEntity(statement, HttpStatus.OK);
+			
+			
+
+		}
+
+		
+	
+	}
+
+
+}

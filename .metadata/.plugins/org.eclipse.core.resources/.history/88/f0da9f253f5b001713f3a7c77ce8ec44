@@ -1,0 +1,9 @@
+package com.tmobile.newservice.Repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.tmobile.newservice.VO.StatementVO;
+
+public interface DAORepository  extends CrudRepository<StatementVO,Integer>{
+
+}

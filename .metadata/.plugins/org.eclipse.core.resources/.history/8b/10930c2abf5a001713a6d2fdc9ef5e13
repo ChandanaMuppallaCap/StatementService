@@ -1,0 +1,23 @@
+package com.tmobile.newservice;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class StatementVO {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private String	StatementId ;
+	private String	AccountId;
+	private double BalanceFwd;
+	private double TotalStatementDue;
+
+	
+	@Override
+	public String toString() {
+		return String.format("Statement[statementId=%d, phoneNumber=%s, firstName='%s', lastName='%s',ssn='%s',dob='%s',status='%d']",
+				customerId, phoneNumber, firstName, lastName, ssn, dob,status);
+
+	}
+}

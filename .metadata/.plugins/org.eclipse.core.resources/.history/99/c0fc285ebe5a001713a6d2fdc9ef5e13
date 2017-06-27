@@ -1,0 +1,10 @@
+package com.tmobile.newservice;
+
+public class Statement {
+	private String	Statement_id ;
+	private String	Account_id;
+	private double Balance_fwd;
+	private double Total_statement_due;
+
+
+}

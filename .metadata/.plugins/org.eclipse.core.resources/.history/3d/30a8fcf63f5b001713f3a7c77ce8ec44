@@ -1,0 +1,17 @@
+package com.tmobile.newservice.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.tmobile.newservice.Repository.DAORepository;
+import com.tmobile.newservice.VO.StatementVO;
+
+public class StatmentService {
+	@Autowired
+	private DAORepository repository;
+	
+	public StatementVO getStatementsById(String StatementId)
+	{
+		  return repository.getStatementsById(StatementId);
+	}
+
+}

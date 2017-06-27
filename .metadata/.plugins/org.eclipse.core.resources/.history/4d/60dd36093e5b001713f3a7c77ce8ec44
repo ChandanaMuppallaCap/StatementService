@@ -1,0 +1,5 @@
+package com.tmobile.newservice.Repository;
+
+public interface DAORepository {
+
+}
